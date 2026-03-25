@@ -137,11 +137,14 @@ xattr -cr /Applications/Chat2Prompt.app
 
 ## 📄 许可证
 
-本软件为**免费使用，源码不公开**（Proprietary Freeware）。
+本软件为**个人免费使用，禁止商业用途**（Personal Use Only）。
 
-- ✅ 免费下载和使用
-- ✅ 个人和商业用途均可
+- ✅ 个人免费下载和使用
+- ✅ 个人学习和非商业项目
+- ❌ **禁止任何商业用途**（包括企业内部使用）
 - ❌ 不得反编译、逆向工程或修改
 - ❌ 不得重新分发修改版本
+
+如需商业授权，请联系作者。
 
 Copyright © 2025 Chat2Prompt. All rights reserved.
