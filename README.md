@@ -40,9 +40,11 @@
 | 🧠 **智能 Prompt 生成** | 输入目标 → 自动生成结构化专业提示词 |
 | 🤖 **AI 润色增强** | 对接你自己的 LLM API Key，一键深度优化提示词 |
 | 🎨 **多类型支持** | 图像 / 文案 / 视频三大类型，预设丰富参数面板 |
+| 🖼️ **图片文字控制** | 支持在图像提示词中精确控制文字内容与排版 |
 | 📚 **模板库管理** | 收藏精调后的提示词为模板，随时复用 |
 | 📜 **历史记录** | 所有生成记录本地保存，支持搜索与收藏 |
 | 🔌 **灵活 LLM 配置** | 支持 OpenAI / Claude / DeepSeek / 智谱等多家模型 |
+| 🛠️ **Provider 管理增强** | 可视化管理多个 LLM Provider，配置验证与状态检测 |
 | 🔒 **100% 本地隐私** | 数据完全存储于本地 SQLite，绝不上传任何信息 |
 | 🌙 **暗色主题** | 精致的深色界面，长时间使用不疲劳 |
 | 🖥️ **跨平台** | macOS (Apple Silicon) / Windows / Linux |
@@ -79,6 +81,18 @@
 
 ---
 
+## 🏗️ 技术架构
+
+- **前端框架**：React 19 + TypeScript + Tailwind CSS 4
+- **桌面框架**：Tauri 2（Rust 驱动，轻量高性能）
+- **状态管理**：Zustand 5
+- **LLM 调用**：前端直连（无需后端中间层），支持流式输出
+- **本地存储**：SQLite（通过 Tauri 插件）
+
+> ⚡ v0.3.0 起，移除了 Python sidecar 依赖，LLM 逻辑完全迁移至前端，安装体积更小、启动更快。
+
+---
+
 ## 🤔 常见问题
 
 <details>
@@ -90,7 +104,7 @@
 <details>
 <summary><strong>我的数据安全吗？</strong></summary>
 
-完全安全。所有模板、历史记录、API Key 均存储在本地 SQLite 数据库中（`~/.chat2prompt/data.db`），应用不会向任何服务器上传数据（除非你主动调用 LLM API）。
+完全安全。所有模板、历史记录、API Key 均存储在本地 SQLite 数据库中，应用不会向任何服务器上传数据（除非你主动调用 LLM API）。
 </details>
 
 <details>
@@ -100,6 +114,7 @@
 - OpenAI GPT-4o / GPT-4o-mini
 - Anthropic Claude 3.5 / Claude 3 (使用 Messages API)
 - DeepSeek Chat / DeepSeek Reasoner
+- Google Gemini
 - 智谱 AI GLM-4
 - 通义千问 Qwen
 - 本地部署的 Ollama、vLLM 等
@@ -122,11 +137,21 @@ xattr -cr /Applications/Chat2Prompt.app
 
 ## 📋 更新日志
 
-### v0.1.1 (2025-03-25)
+### v0.3.0 (2026-03-26)
+- 🚀 **架构升级**：移除 Python sidecar 依赖，LLM 逻辑完全迁移至前端
+- ⚡ 安装包体积大幅缩小，启动速度显著提升
+- 🔧 简化 CI/CD 构建流程，移除 PyInstaller 打包步骤
+
+### v0.2.0 (2026-03-25)
+- ✨ Provider 管理增强：可视化管理多个 LLM Provider
+- 🖼️ 图片文字控制：支持在图像提示词中控制文字内容
+- 🐛 配置验证修复与稳定性改进
+
+### v0.1.1 (2026-03-25)
 - 🐛 修复 Python sidecar 在打包后崩溃的问题
 - 🐛 修复 WebKit fetch 错误匹配
 
-### v0.1.0 (2025-03-24)
+### v0.1.0 (2026-03-24)
 - 🎉 首个发布版本
 - ✨ 支持图像/文案/视频三种类型的结构化提示词生成
 - ✨ 集成 LLM AI 润色功能
@@ -147,4 +172,4 @@ xattr -cr /Applications/Chat2Prompt.app
 
 如需商业授权，请联系作者。
 
-Copyright © 2025 Chat2Prompt. All rights reserved.
+Copyright © 2026 Chat2Prompt. All rights reserved.
